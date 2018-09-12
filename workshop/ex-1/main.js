@@ -1,8 +1,6 @@
 const Maybe = require("crocks/Maybe");
 const { Just, Nothing } = Maybe;
-const todo = t => () => {
-  throw new Error(t);
-};
+const todo = t => () => t;
 
 // prop :: String -> Object -> Maybe a
 const prop = todo("Create the prop function");
