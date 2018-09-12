@@ -337,12 +337,54 @@ const getC = propPath(["a", "b", "c"]);
 const sum = reduce(add, 0);
 
 // sumC :: Object -> Maybe Number
-const sumC = compose(map(total), getC);
+const sumC = pipe(getC, map(sum));
 ```
 
 ---
 
-## Another example
+## Using a Monoid
+
+---
+
+## Using a Monoid
+
+* Monoids allow us to represent binary operations and are usually locked down to a specific type
+* They are great when you need to combine a list of values down to one value
+* Handily, Crocks provides a standard set of useful of Monoids!
+
+---
+
+## Using a Monoid
+
+One of the Monoids included with Crocks is the Sum type
+
+```javascript
+// Instead of this
+const add = (a, b) => a + b;
+const sum1 = reduce(add, 0);
+
+// We can use the built in behaviours of a Monoid
+const sum2 = mreduce(Sum);
+```
+:bulb: Note that sum1 and sum2 are equivalent - both take an array of numbers and return a number
+
+---
+
+## Updating our example
+
+```JavaScript
+const { Sum, map, mreduce, pipe, propPath } = require("crocks");
+
+const sumC = pipe(propPath(["a", "b", "c"]), map(mreduce(Sum));
+```
+
+---
+
+## `mreduce` vs `mconcat` vs<br>`mreduceMap` vs `mconcatMap`
+
+---
+
+## Another Example of Maybe
 
 ```javascript
 // head :: Array a -> Maybe a
