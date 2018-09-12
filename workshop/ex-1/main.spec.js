@@ -1,5 +1,8 @@
 const { prop, propPath } = require("./main");
+const Maybe = require("crocks/Maybe");
 const option = require("crocks/pointfree/option");
+
+const { Just, Nothing } = Maybe;
 
 const subject = {
   a: {
@@ -12,7 +15,45 @@ const subject = {
 const isNothing = option(true);
 const just = option(false);
 
-test("`prop` returns a property from the top level when it is present", () => {
+test("Maybe types can be constructed using Just and Nothing functions and compared by value using the `equals` method", () => {
+  expect(Just(10).equals(Just(10))).toBeTruthy();
+  expect(Nothing().equals(Nothing())).toBeTruthy();
+  expect(Just(10).equals(Nothing())).toBeFalsy();
+  expect(Just(10).equals(Just("ten"))).toBeFalsy();
+});
+
+test("Maybe types can have their values extracted using option", () => {
+  const a = Just(10);
+  const b = Nothing();
+
+  expect(a.option(0)).toEqual(10);
+  expect(b.option(10)).toEqual(10);
+});
+
+test("Maybe types have an `either` method which lets us work with the Just value or Nothing", () => {
+  const a = Just("foo");
+  const b = Nothing();
+
+  const id = x => x;
+  const bar = () => "bar";
+
+  expect(a.either(bar, id)).toEqual("foo");
+  expect(b.either(bar, id)).toEqual("bar");
+});
+
+test("Maybe types have a Functor to allow us to manipulate an inner value", () => {
+  const double = x => x * 2;
+  const a = Just(10);
+  const b = a.map(double);
+  const c = Nothing().map(double);
+
+  expect(a).not.toBe(b);
+  expect(a.option(0)).not.toEqual(20);
+  expect(b.option(0)).toEqual(20);
+  expect(c.option(0)).toEqual(0);
+});
+
+test.skip("`prop` returns a property from the top level when it is present", () => {
   expect(just(prop("a", subject))).toBe(subject.a);
 });
 

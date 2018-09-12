@@ -1,11 +1,17 @@
 {
   "name": "ex-1",
   "version": "1.0.0",
+  "description": "",
   "dependencies": {
     "crocks": "^0.10.1",
+    "eslint": "^5.5.0",
+    "eslint-plugin-jest": "^21.22.0",
     "jest": "^23.6.0"
   },
+  "keywords": [],
+  "author": "Ian Thomas",
   "scripts": {
     "test": "jest"
-  }
+  },
+  "license": "MIT"
 }

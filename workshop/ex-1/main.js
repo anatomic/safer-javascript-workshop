@@ -1,5 +1,3 @@
-const Maybe = require("crocks/Maybe");
-const { Just, Nothing } = Maybe;
 const todo = t => () => t;
 
 // prop :: String -> Object -> Maybe a
