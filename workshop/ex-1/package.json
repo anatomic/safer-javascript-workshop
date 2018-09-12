@@ -1,0 +1,11 @@
+{
+  "name": "ex-1",
+  "version": "1.0.0",
+  "dependencies": {
+    "crocks": "^0.10.1",
+    "jest": "^23.6.0"
+  },
+  "scripts": {
+    "test": "jest"
+  }
+}
