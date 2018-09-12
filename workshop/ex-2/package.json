@@ -1,0 +1,15 @@
+{
+  "name": "ex-2",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [],
+  "author": "Ian Thomas",
+  "license": "MIT",
+  "dependencies": {
+    "crocks": "^0.10.1",
+    "jest": "^23.6.0"
+  }
+}
