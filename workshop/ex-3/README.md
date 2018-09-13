@@ -29,4 +29,4 @@ It is recommended to work through the tests from top to bottom. Initially, all b
 
 ## Extension Tasks
 
-At the end of the test suite is a further test which adds in an extra challenge around handling null.
+At the end of the test suite is a further test which adds in an extra challenge around ensuring that the the numbers parsed are within the range allowed by hex values (rather than just base-16).

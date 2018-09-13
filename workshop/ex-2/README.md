@@ -19,4 +19,4 @@ It is recommended to work through the tests from top to bottom. Initially, all b
 
 ## Extension Tasks
 
-At the end of the test suite are two additional tests which add in some challenges around handling invalid input (i.e. missing data or the wrong type of data). If you have a chance, see if you can amend your code to ensure all these edge cases are covered.
+At the end of the test suite are two additional tests which extend our requirements beyond simply `Just a` or `Nothing`. Here we want to include some context as to what the failure/absence of value is.
