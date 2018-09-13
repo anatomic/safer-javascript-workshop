@@ -1,5 +1,18 @@
 # Exercise 3 - Creating A Functional Pipeline
 
+## The Challenge!
+
+Given some JSON in the form:
+`{ a: { b: { c: ["AA", "1C", "FF"]}}}`
+
+Provide a function to:
+1. Parse the JSON
+2. Extract the hex values
+3. Convert the hex values to integers
+4. Sum them up!
+
+The tests will throw various cases at you which will need to be handled and in the spirit of consistent returns,
+if any of the above steps fail then we expect the function to return 0.
 
 ## Setup
 
@@ -16,4 +29,4 @@ It is recommended to work through the tests from top to bottom. Initially, all b
 
 ## Extension Tasks
 
-At the end of the test suite are two additional tests which add in some challenges around handling invalid input (i.e. missing data or the wrong type of data). If you have a chance, see if you can amend your code to ensure all these edge cases are covered.
+At the end of the test suite is a further test which adds in an extra challenge around handling null.
