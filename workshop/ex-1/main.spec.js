@@ -53,7 +53,7 @@ test("Maybe types have a Functor to allow us to manipulate an inner value", () =
   expect(c.option(0)).toEqual(0);
 });
 
-test.skip("`prop` returns a property from the top level when it is present", () => {
+test("`prop` returns a property from the top level when it is present", () => {
   expect(just(prop("a", subject))).toBe(subject.a);
 });
 
