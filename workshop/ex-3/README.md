@@ -33,4 +33,4 @@ At the end of the test suite is a further test which adds in an extra challenge 
 
 ---
 
-This exercise is based on a challenge set by [David Chambers](https://github.com/davidchambers) during his LambdaConf 2018 workshop. David is a core contributor to the [Fantasyland Spec](https://github.com/fantasyland/) and creator of the [Sanctuary](https://sanctuary.js.org/) library. While I prefer to use Crocks, there is a lot of very good thinking in the Sanctuary library and David is very generous with his time and knowledge!
+This exercise is based on a challenge set by [David Chambers](https://github.com/davidchambers) during his LambdaConf 2018 workshop. David is a core contributor to the [Fantasy Land Spec](https://github.com/fantasyland/) and creator of the [Sanctuary](https://sanctuary.js.org/) library. While I prefer to use Crocks, there is a lot of very good thinking in the Sanctuary library and David is very generous with his time and knowledge!
