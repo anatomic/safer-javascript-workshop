@@ -80,8 +80,10 @@ footer: Ian Thomas | @anatomic | Leeds JS | 26th September 2018
 
 ---
 
-[.code-highlight: none][.code-highlight: 1]
-[.code-highlight: 2][.code-highlight: 4-6]
+[.code-highlight: none]
+[.code-highlight: 1]
+[.code-highlight: 2]
+[.code-highlight: 4-6]
 
 ```javascript
 const a = { a: { b: { c: [1, 2, 3] } } };
@@ -139,8 +141,10 @@ const sumC = data => {
 
 ---
 
-[.code-highlight: none][.code-highlight: 1-2]
-[.code-highlight: 4-5][.code-highlight: 7-8]
+[.code-highlight: none]
+[.code-highlight: 1-2]
+[.code-highlight: 4-5]
+[.code-highlight: 7-8]
 [.code-highlight: 10-11]
 
 ```javascript
@@ -375,7 +379,13 @@ const sum2 = mreduce(Sum);
 ```JavaScript
 const { Sum, map, mreduce, pipe, propPath } = require("crocks");
 
+const a = { a: { b: { c: [1, 2, 3] } } };
+const b = { a: { b: { c: null } } };
+
 const sumC = pipe(propPath(["a", "b", "c"]), map(mreduce(Sum));
+
+sumC(a); // Just 6
+sumC(b); // Nothing
 ```
 
 ---
