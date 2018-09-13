@@ -1,0 +1,19 @@
+{
+  "name": "ex-4",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "crocks": "^0.10.1",
+    "eslint": "^5.5.0",
+    "eslint-plugin-jest": "^21.22.0",
+    "jest": "^23.6.0",
+    "node-fetch": "^2.2.0"
+  }
+}
