@@ -542,7 +542,7 @@ const head = arr => {
 
 * [My Accompanying Workshop](https://github.com/anatomic/safe-javascript-workshop)
 * [Professor Frisby's Mostly Adequate Guide](https://github.com/MostlyAdequate/mostly-adequate-guide)
-* [Professor Frisby Introduces Composable Functional JavaScript](https://egghead.io/courses/professor-frisby-introduces-composable-functional-javascript
+* [Professor Frisby Introduces Composable Functional JavaScript](https://egghead.io/courses/professor-frisby-introduces-composable-functional-javascript)
 * [Fantas Eel And Specification](http://www.tomharding.me/fantasy-land/)
 * [Elm](https://elm-lang.org)
 * [Evilsoft's YouTube Channel](https://www.youtube.com/channel/UCc8LoGpIa8tRNosGGJroS2Q)
