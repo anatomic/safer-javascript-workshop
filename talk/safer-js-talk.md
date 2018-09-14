@@ -274,7 +274,9 @@ throw new CannotSumError("C should be an array");
 
 ## *Sum Types* to the rescue
 
-^ Maybe need to do an aside here to discuss the difference between product types and sum types?
+^ The values of a product type typically contain several values, called fields. All values of that type have the same combination of field types. The set of all possible values of a product type is the set-theoretic product, i.e., the Cartesian product, of the sets of all possible values of its field types.
+
+^ The values of a sum type are typically grouped into several classes, called variants. A value of a variant type is usually created with a quasi-functional entity called a constructor. Each variant has its own constructor, which takes a specified number of arguments with specified types. The set of all possible values of a sum type is the set-theoretic sum, i.e., the disjoint union, of the sets of all possible values of its variants. Enumerated types are a special case of sum types in which the constructors take no arguments, as exactly one value is defined for each constructor.
 
 ---
 
@@ -544,6 +546,7 @@ const head = arr => {
 * [Fantas Eel And Specification](http://www.tomharding.me/fantasy-land/)
 * [Elm](https://elm-lang.org)
 * [Evilsoft's YouTube Channel](https://www.youtube.com/channel/UCc8LoGpIa8tRNosGGJroS2Q)
+* [ADTs on Wikipedia](https://en.wikipedia.org/wiki/Algebraic_data_type)
 
 ---
 

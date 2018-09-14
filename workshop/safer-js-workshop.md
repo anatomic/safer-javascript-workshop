@@ -274,7 +274,9 @@ throw new CannotSumError("C should be an array");
 
 ## *Sum Types* to the rescue
 
-^ Maybe need to do an aside here to discuss the difference between product types and sum types?
+^ The values of a product type typically contain several values, called fields. All values of that type have the same combination of field types. The set of all possible values of a product type is the set-theoretic product, i.e., the Cartesian product, of the sets of all possible values of its field types.
+
+^ The values of a sum type are typically grouped into several classes, called variants. A value of a variant type is usually created with a quasi-functional entity called a constructor. Each variant has its own constructor, which takes a specified number of arguments with specified types. The set of all possible values of a sum type is the set-theoretic sum, i.e., the disjoint union, of the sets of all possible values of its variants. Enumerated types are a special case of sum types in which the constructors take no arguments, as exactly one value is defined for each constructor.
 
 ---
 
@@ -464,7 +466,7 @@ sumC(b); // Nothing
 
 ---
 
-## `mreduce` vs `mconcat` vs<br>`mreduceMap` vs `mconcatMap`
+## *mreduce* vs *mconcat* vs<br>*mreduceMap* vs *mconcatMap*
 
 ^ There's also `mapReduce` which allows us to create the `empty` type to start the reduction
 
@@ -531,18 +533,42 @@ const head = arr => {
 
 ---
 
-> Yeah this is really not happening. It totally ignores reality in favor of typed-language fantasy land, making a more awkward and less useful API just to satisfy some peoples' aesthetic preferences that aren't even applicable to JavaScript.
+> Yeah this is really not happening. It totally ignores reality in favor of *typed-language fantasy land*, making a more awkward and less useful API just to satisfy some peoples' aesthetic preferences that aren't even applicable to JavaScript.
 -- [Incorporate monads and category theory](https://github.com/promises-aplus/promises-spec/issues/94#issuecomment-16176966)
 
 ---
 
-# Let's Get Coding!
+# Let's Get *Coding!*
 
 ---
 
 ## Clone the repo
+### *[https://github.com/anatomic/safer-javascript-workshop](https://github.com/anatomic/safer-javascript-workshop)*
 
+---
 
+## Exercise 1
+### *prop* and *propPath* functions
+
+---
+
+## Exercise 2
+### Making *safer* functions
+
+---
+
+## Exercise 3
+### Creating a *functional pipeline*
+
+---
+
+## Exercise 4
+### Making a *useful* app!
+
+---
+
+## Exercise 4
+### *[Example answer](https://gist.github.com/anatomic/6eca72d6ed9e1f09c61edd478b0c030c)*
 
 ---
 
@@ -553,6 +579,7 @@ const head = arr => {
 * [Fantas Eel And Specification](http://www.tomharding.me/fantasy-land/)
 * [Elm](https://elm-lang.org)
 * [Evilsoft's YouTube Channel](https://www.youtube.com/channel/UCc8LoGpIa8tRNosGGJroS2Q)
+* [ADTs on Wikipedia](https://en.wikipedia.org/wiki/Algebraic_data_type)
 
 ---
 

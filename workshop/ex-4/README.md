@@ -8,7 +8,9 @@ Using the [CityBikes API](http://api.citybik.es/v2/):
 
 ## Setup
 
-The `package.json` file contains the same basic dependencies as the rest of the exercises and a couple of tests to check your answer against. The tests are less extensive and only really offer a guide to what the overall output should be. This exercise is an opportunity to try different things and get your hands dirty working with ADTs.
+The `package.json` file contains the same basic dependencies as the rest of the exercises and a couple of tests to check your answer against.
+
+There aren't any tests included, but the repo is set up to include jest and you are encouraged to explore options for the solution in a test driven approach. Use the tests from previous exercises as examples to build from.
 
 There is a public gist of *one* approach to solving this, if you're really stuck get in touch with me and I'll share the link (unless you're a decent sleuth and have found it for yourself).
 
