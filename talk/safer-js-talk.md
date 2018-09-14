@@ -1,5 +1,6 @@
 autoscale: true
-slidenumber: true
+slidenumbers: true
+theme: sketchnote, 1
 footer: Ian Thomas | @anatomic | Leeds JS | 26th September 2018
 
 > No one in the brief history of computing has ever written a piece of perfect software. It's unlikely that you'll be the first"
@@ -7,21 +8,37 @@ footer: Ian Thomas | @anatomic | Leeds JS | 26th September 2018
 
 ---
 
-# Programming _Safely_<br>With _Types_
+[.hide-footer]
+[.slidenumbers: false]
 
-### Leeds JS September 2018 | @anatomic
+# Programming _Safely_<br>With _Types_
+### Ian Thomas | @anatomic
+
+---
+
+## Does JavaScript have types?
+### (And can they be safe?)
+
+---
+
+## JavaScript's types
+
+[.build-lists]
+
+* Undefined
+* Null
+* Boolean
+* String
+* Number
+* Object
+
+^ An ECMAScript language type corresponds to values that are directly manipulated by an ECMAScript programmer using the ECMAScript language.
 
 ---
 
 ## What is _safety_?
 
 ![](https://images.unsplash.com/photo-1533897293409-81c85f3afdde?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=9bbd7bc1481f88ad676953399122affb&auto=format&fit=crop&w=676&q=80)
-
----
-
-## Does JavaScript have types?
-
-### (And can they be safe?)
 
 ---
 
@@ -54,7 +71,58 @@ footer: Ian Thomas | @anatomic | Leeds JS | 26th September 2018
 
 ---
 
-# Static vs Dynamic;<br>Strong vs Weak.
+# Static vs Dynamic;<br>Strong vs Weak.[^1]
+
+^ static usually means "at compile time" while dynamic means "at run time"
+
+^ strong vs weak is a less useful definition. Often better to consider things like coercion and type-checking (though weak can mean the type of a variable changes at runtime)
+
+[^1]: http://2ality.com/2013/09/types.html
+
+---
+
+## Spot the difference
+
+```javascript
+const a = null;
+a.prop; // 1
+
+const b = {};
+b.prop; // 2
+```
+
+What happens at `1` and `2`?
+
+---
+
+## Spot the difference
+
+[.build-lists]
+
+```javascript
+const a = null;
+a.prop; // 1
+
+const b = {};
+b.prop; // 2
+```
+
+1. :boom: `TypeError: Cannot read property 'prop' of null` :boom:
+1. Silently fails, returning `undefined`
+
+---
+
+## Which is interesting because...
+
+```javascript
+> typeof null
+'object'
+```
+
+---
+
+# :see_no_evil:
+
 
 ---
 
@@ -191,7 +259,7 @@ throw new CannotSumError("C should be an array");
 
 # Introducing
 
-#[fit] ADTs
+# [fit]*ADTs*
 
 ---
 
@@ -204,13 +272,13 @@ throw new CannotSumError("C should be an array");
 
 ---
 
-## Sum Types to the rescue
+## *Sum Types* to the rescue
 
 ^ Maybe need to do an aside here to discuss the difference between product types and sum types?
 
 ---
 
-## First, a quick intro to Haskell-like type signatures
+## First, a quick intro to<br>*Haskell-like* type signatures
 
 ---
 
@@ -240,8 +308,6 @@ throw new CannotSumError("C should be an array");
 
 ## A solution using ADTs
 
-^ If we are working with a function that may fail to return a result (like getting the first item from an array), we can use a Sum Type to represent the absence of a value
-
 [.code-highlight: all]
 [.code-highlight: 6-7]
 
@@ -259,12 +325,19 @@ const sumC = data => {
 };
 ```
 
+^ If we are working with a function that may fail to return a result (like getting the first item from an array), we can use a Sum Type to represent the absence of a value
+
 ---
 
 
 ## Safely getting properties from an object
 
 ^ We don't want inconsistent return types but we need to find a way to represent success and failure
+
+[.code-highlight: none]
+[.code-highlight: 1-2]
+[.code-highlight: 6-7]
+[.code-highlight: 9-10]
 
 ```javascript
 const prop = require("crocks/Maybe/prop");
@@ -281,12 +354,11 @@ const d = propPath(["a", "b", "d"], data); // Nothing
 
 ---
 
-### Maybe is a Functor
+## Maybe is a *Functor*
 
 ---
 
 ### Maybe is a Functor
-
 
 > A value which has a Functor must provide a `map` method. The `map` method takes one argument
 -- Fantasyland Specification
@@ -307,7 +379,7 @@ const sumC = data =>
 
 ---
 
-### What Happens If We Get A `Nothing`?
+## What Happens If We Get A *Nothing*?
 
 ---
 
@@ -324,7 +396,7 @@ Nothing.prototype.map = function(fn) { return this; };
 
 ---
 
-## Currying, Composition & Pointfree style
+### Currying, Composition & Pointfree style
 
 ^ While our flow is a big improvement on before (it's pure and we have a consistent return type), it's still quite brittle. One of the core principals behind this style of programming is being able to produce small, well understood pieces of functionality which can be composed together
 
@@ -346,11 +418,13 @@ const sumC = pipe(getC, map(sum));
 
 ---
 
-## Using a Monoid
+## Using a *Monoid*
 
 ---
 
 ## Using a Monoid
+
+[.build-lists: true]
 
 * Monoids allow us to represent binary operations and are usually locked down to a specific type
 * They are great when you need to combine a list of values down to one value
@@ -392,9 +466,16 @@ sumC(b); // Nothing
 
 ## `mreduce` vs `mconcat` vs<br>`mreduceMap` vs `mconcatMap`
 
+^ There's also `mapReduce` which allows us to create the `empty` type to start the reduction
+
 ---
 
-## Another Example of Maybe
+### Jumping back...
+## Getting the first item in an array
+
+---
+
+## Getting the first item in an array
 
 ```javascript
 // head :: Array a -> Maybe a
@@ -409,17 +490,65 @@ const head = arr => {
 
 ---
 
+## What if we need to represent more than just "Nothing"?
+
+---
+
+## *Maybe* is just the start of this adventure...
+
+---
+
+## data Either e a = Left a | Right b
+
+---
+
+## data Result e a = Err e | Ok a
+
+---
+
+## data Async e a = Rejected e | Result a
+
+---
+
+## Data Pair a b = Pair a b
+
+---
+
+## [fit] data RemoteData e a = NotAsked | Loading | Error e | Success a
+
+---
+
+## This all sounds great, but why the *crazy names?*
+
+---
+
 > The specifications in this list do not derive from goals such as trying to write rules for lists and maps. Instead, they start by _noticing_ rules that apply in common to disparate structures.
 > -- https://github.com/fantasyland/fantasy-land/issues/127#issuecomment-192763058
 
 ---
 
-## What if we need to represent more than just "Nothing"?
+## Aside, why *Fantasy Land?*
 
 ---
 
-## data Result e a = Error e | Ok a
+> Comment re: fantasy land
+-- github issue
 
 ---
 
-##[fit] data RemoteData e a = NotAsked | Loading | Error e | Success a
+## Where to learn more
+
+* [My Accompanying Workshop](https://github.com/anatomic/safe-javascript-workshop)
+* [Professor Frisby's Mostly Adequate Guide]()
+* [Professor Frisby's Guide To Functional Programming]()
+* [Fantas Eel And Specification](http://www.tomharding.me/fantasy-land/)
+* [Elm](https://elm-lang.org)
+* [Evilsoft's YouTube Channel]()
+
+---
+
+[.hide-footer]
+[.slidenumbers: false]
+
+# Programming *safely*<br>with *types*
+### Ian Thomas | @anatomic

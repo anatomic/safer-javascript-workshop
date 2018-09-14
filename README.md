@@ -2,6 +2,8 @@
 
 ## What
 
+JavaScript has a reputation.
+
 ## Why
 
 ## Who
@@ -24,21 +26,14 @@
     1. Map
     1. FlatMap
     1. Natural Transformations
-    
 
-## Ideas for exercises
+## Appendix
 
-1. Pick a property from an object
-1. Take the first item from an array
-1. Take the last item from an array
-1. Parse broken JSON
-
-
-## Reference Errors
+### Reference Errors
 
 > The `ReferenceError` object represents an error when a non-existent variable is referenced.
 
-## Type Errors
+### Type Errors
 
 > The `TypeError` object represents an error when a value is not of the expected type.
 
@@ -46,3 +41,9 @@ Typical errors:
 
 > `undefined` is not a function
 > TypeError: cannot read property `x` of `undefined`
+
+### Syntax Errors
+
+> A `SyntaxError` is thrown when the JavaScript engine encounters tokens or token order that does not conform to the syntax of the language when parsing code.
+
+We can typically come across this at runtime when attempting to parse invalid JSON.
