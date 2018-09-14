@@ -531,19 +531,19 @@ const head = arr => {
 
 ---
 
-> Comment re: fantasy land
--- github issue
+> Yeah this is really not happening. It totally ignores reality in favor of typed-language *fantasy land*, making a more awkward and less useful API just to satisfy some peoples' aesthetic preferences that aren't even applicable to JavaScript.
+-- [Incorporate monads and category theory](https://github.com/promises-aplus/promises-spec/issues/94#issuecomment-16176966)
 
 ---
 
 ## Where to learn more
 
 * [My Accompanying Workshop](https://github.com/anatomic/safe-javascript-workshop)
-* [Professor Frisby's Mostly Adequate Guide]()
-* [Professor Frisby's Guide To Functional Programming]()
+* [Professor Frisby's Mostly Adequate Guide](https://github.com/MostlyAdequate/mostly-adequate-guide)
+* [Professor Frisby Introduces Composable Functional JavaScript](https://egghead.io/courses/professor-frisby-introduces-composable-functional-javascript
 * [Fantas Eel And Specification](http://www.tomharding.me/fantasy-land/)
 * [Elm](https://elm-lang.org)
-* [Evilsoft's YouTube Channel]()
+* [Evilsoft's YouTube Channel](https://www.youtube.com/channel/UCc8LoGpIa8tRNosGGJroS2Q)
 
 ---
 
