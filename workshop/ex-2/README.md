@@ -2,7 +2,7 @@
 
 There are certain operations which are inherently unsafe. Dividing by zero, parsing numbers from strings, parsing JSON, etc. all cause us issues at runtimes either through inconsistent return types or (worse) throwing errors.
 
-As in exercise 1, work through the tests to create safer versions of some well know functions. At the top of the tests file are some examples of how to use the Crocks library to produce Maybes and safer versions of functions.
+As in exercise 1, work through the tests to create safer versions of some well known functions. At the top of the tests file are some examples of how to use the Crocks library to produce Maybes and safer versions of functions.
 
 ## Setup
 
