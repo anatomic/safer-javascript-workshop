@@ -60,31 +60,31 @@ describe("Getting a top level prop", () => {
     expect(just(prop("a", subject))).toBe(subject.a);
   });
 
-  test.skip("`prop` returns Nothing when property is missing", () => {
+  test("`prop` returns Nothing when property is missing", () => {
     expect(isNothing(prop("b", subject))).toBeTruthy();
     expect(isNothing(prop("", subject))).toBeTruthy();
   });
 
-  test.skip("`prop` returns Nothing when value is missing, undefined or null", () => {
+  test("`prop` returns Nothing when value is missing, undefined or null", () => {
     expect(isNothing(prop("a", null))).toBeTruthy();
     expect(isNothing(prop("a", undefined))).toBeTruthy();
   });
 });
 
 describe("Getting a nested property", () => {
-  test.skip("`propPath` returns a Just when the path is valid", () => {
+  test("`propPath` returns a Just when the path is valid", () => {
     expect(just(propPath(["a"], subject))).toEqual(subject.a);
     expect(just(propPath(["a", "b"], subject))).toEqual(subject.a.b);
     expect(just(propPath(["a", "b", "c"], subject))).toEqual(subject.a.b.c);
   });
 
-  test.skip("`propPath` returns a Nothing when the path is not valid", () => {
+  test("`propPath` returns a Nothing when the path is not valid", () => {
     expect(isNothing(propPath(["b"], subject))).toBeTruthy();
     expect(isNothing(propPath(["a", 10], subject))).toBeTruthy();
     expect(isNothing(propPath([], subject))).toBeTruthy();
   });
 
-  test.skip("`propPath` returns a Nothing when the value is missing, undefined or null", () => {
+  test("`propPath` returns a Nothing when the value is missing, undefined or null", () => {
     expect(isNothing(propPath(["a", "b", "c"], null))).toBeTruthy();
     expect(isNothing(propPath(["a", "b", "c"], undefined))).toBeTruthy();
     expect(isNothing(propPath(["a", "b", "c"], "hellloooo"))).toBeTruthy();
@@ -99,7 +99,7 @@ describe("Getting a nested property", () => {
  */
 
 describe("Extension tasks", () => {
-  test.skip("`prop` extension exercises", () => {
+  test("`prop` extension exercises", () => {
     expect(isNothing(prop(10, subject))).toBeTruthy();
     expect(isNothing(prop(undefined, subject))).toBeTruthy();
     expect(isNothing(prop(null, subject))).toBeTruthy();
@@ -109,7 +109,7 @@ describe("Extension tasks", () => {
     expect(isNothing(prop("c", { c: null }))).toBeTruthy();
   });
 
-  test.skip("`propPath` extension exercises", () => {
+  test("`propPath` extension exercises", () => {
     expect(isNothing(propPath("", subject))).toBeTruthy();
     expect(isNothing(propPath(undefined, subject))).toBeTruthy();
     expect(isNothing(propPath(null, subject))).toBeTruthy();

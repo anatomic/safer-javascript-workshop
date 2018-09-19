@@ -123,28 +123,28 @@ describe("The challenge", () => {
     expect(app(valid)).toEqual(453);
   });
 
-  test.skip("Handles invalid JSON", () => {
+  test("Handles invalid JSON", () => {
     expect(app(invalid)).toEqual(0);
   });
 
-  test.skip("Handles missing data", () => {
+  test("Handles missing data", () => {
     expect(app(missing)).toEqual(0);
   });
 
-  test.skip("Handles empty data", () => {
+  test("Handles empty data", () => {
     expect(app(empty)).toEqual(0);
   });
 
-  test.skip("Handles undefined data", () => {
+  test("Handles undefined data", () => {
     expect(app(_undefined)).toEqual(0);
   });
 
-  test.skip("Handles null data", () => {
+  test("Handles null data", () => {
     expect(app(nulled)).toEqual(0);
   });
 
   // Extension, add an extra check to ensure all hex values are <= FF
-  test.skip("Handles out of range values", () => {
+  test("Handles out of range values", () => {
     expect(app(outOfRange)).toEqual(0);
   });
 });

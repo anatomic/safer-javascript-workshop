@@ -50,7 +50,7 @@ describe("safeParseNumber", () => {
     expect(safeParseNumber("9999foo").equals(Just(9999))).toBeTruthy();
   });
 
-  test.skip("parsing an invalid number should return `Nothing`", () => {
+  test("parsing an invalid number should return `Nothing`", () => {
     expect(safeParseNumber("ten").equals(Nothing())).toBeTruthy();
     expect(safeParseNumber("").equals(Nothing())).toBeTruthy();
     expect(safeParseNumber("-").equals(Nothing())).toBeTruthy();
@@ -61,14 +61,14 @@ describe("safeParseNumber", () => {
 });
 
 describe("safeParseInteger", () => {
-  test.skip("parsing an integer should return `Just int`", () => {
+  test("parsing an integer should return `Just int`", () => {
     expect(safeParseInteger("10").equals(Just(10))).toBeTruthy();
     expect(safeParseInteger("10.5").equals(Just(10))).toBeTruthy();
     expect(safeParseInteger("0").equals(Just(0))).toBeTruthy();
     expect(safeParseInteger("9999foo").equals(Just(9999))).toBeTruthy();
   });
 
-  test.skip("parsing an invalid integer should return `Nothing`", () => {
+  test("parsing an invalid integer should return `Nothing`", () => {
     expect(safeParseInteger("ten").equals(Nothing())).toBeTruthy();
     expect(safeParseInteger(".5").equals(Nothing())).toBeTruthy();
     expect(safeParseInteger("foo9999").equals(Nothing())).toBeTruthy();
@@ -91,13 +91,13 @@ describe("safeParseInteger", () => {
 describe("safeParseJson", () => {
   const valid = JSON.stringify({ foo: "bar" });
   const invalid = "foo: 'bar'";
-  test.skip("parses valid JSON and returns `OK a`", () => {
+  test("parses valid JSON and returns `OK a`", () => {
     expect(safeParseJson(valid).equals(Ok({ foo: "bar" }))).toBeTruthy();
   });
 
   // A clue to the solution to this particular problem lies in the fact that Result is a Bifunctor
   // https://github.com/fantasyland/fantasy-land/#bifunctor
-  test.skip("Handles JSON parsing failure and returns sensible error message", () => {
+  test("Handles JSON parsing failure and returns sensible error message", () => {
     safeParseJson(invalid).either(console.log, console.error);
     expect(
       safeParseJson(invalid).equals(Err("Failed to parse JSON"))
