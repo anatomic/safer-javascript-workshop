@@ -1,4 +1,3 @@
-const { Just } = require("crocks/Maybe");
 const bimap = require("crocks/pointfree/bimap");
 const constant = require("crocks/combinators/constant");
 const identity = require("crocks/combinators/identity");
