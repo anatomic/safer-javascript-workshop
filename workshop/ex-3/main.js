@@ -21,7 +21,7 @@ const tryCatch = require("crocks/Result/tryCatch");
 // parseJson :: String -> Maybe a
 const parseJson = pipe(tryCatch(JSON.parse), resultToMaybe);
 
-// isValidHex :: a -> Boolean
+// isValidHex :: Pred String
 const isValidHex = Pred(isString).concat(
   Pred(s => s.split("").every(c => /[0-9a-f]/i.test(c)))
 );
