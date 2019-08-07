@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "test:watch": "jest --watch"
   },
   "keywords": [],
   "author": "Ian Thomas",
@@ -11,7 +12,7 @@
   "dependencies": {
     "crocks": "^0.10.1",
     "eslint": "^5.5.0",
-    "eslint-plugin-jest": "^21.22.0",
-    "jest": "^23.6.0"
+    "eslint-plugin-jest": "^22.14.1",
+    "jest": "^24.8.0"
   }
 }

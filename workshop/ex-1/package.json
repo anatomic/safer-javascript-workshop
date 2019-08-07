@@ -12,7 +12,8 @@
   "keywords": [],
   "author": "Ian Thomas",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "test:watch": "jest --watch"
   },
   "license": "MIT"
 }

@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "nodex main.js",
+    "test": "echo \"Error: no test specified. Try running your script with `npm start`\" && exit 1"
   },
   "keywords": [],
   "author": "",
@@ -12,8 +13,8 @@
   "dependencies": {
     "crocks": "^0.10.1",
     "eslint": "^5.5.0",
-    "eslint-plugin-jest": "^21.22.0",
-    "jest": "^23.6.0",
+    "eslint-plugin-jest": "^22.14.1",
+    "jest": "^24.8.0",
     "node-fetch": "^2.2.0"
   }
 }
